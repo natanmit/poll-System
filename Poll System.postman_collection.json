@@ -1,0 +1,567 @@
+{
+	"info": {
+		"_postman_id": "7ff408f7-8dad-4bcf-b1c8-c4d35347a0d2",
+		"name": "Poll System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15232538"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"test@gamil.com\",\r\n  \"password\": \"test123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3006/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3006",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"firstname\": \"John\",\r\n  \"lastname\": \"Doe\",\r\n  \"email\": \"test@gamil.com\",\r\n  \"password\": \"test123\",\r\n  \"birthday\": \"1990-01-01\",\r\n  \"address\": \"123 Main Street, Anytown, USA\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3006/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3006",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "questions",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjQ0NzNkODA2MzY0NzA3NTFiNWRjZGEiLCJpYXQiOjE3MTU3NjIxOTQsImV4cCI6MTcxNTg0ODU5NH0.tKZavfoPXbsSh1LrRWRXSuMxQQGHHIFvIiVeoB_amXw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3006/api/questions?page=1&limit=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3006",
+					"path": [
+						"api",
+						"questions"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "statistics with questionid get users and question",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjQ0YzNiMzc4ODI4NDJkZGZiYzM5NGEiLCJpYXQiOjE3MTU4NzQwNjUsImV4cCI6MTcxNTk2MDQ2NX0.y277tiZK8DjuiU4nBx6hVvJHs55XbuetHXkniNftBtY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3006/api/statistics/question/6644c2a6b7383abfc4752f5a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3006",
+					"path": [
+						"api",
+						"statistics",
+						"question",
+						"6644c2a6b7383abfc4752f5a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "statistics with questionid get users and question total",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjQ0YzNiMzc4ODI4NDJkZGZiYzM5NGEiLCJpYXQiOjE3MTU4NzQwNjUsImV4cCI6MTcxNTk2MDQ2NX0.y277tiZK8DjuiU4nBx6hVvJHs55XbuetHXkniNftBtY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3006/api/statistics/question-total/6644c2a6b7383abfc4752f5a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3006",
+					"path": [
+						"api",
+						"statistics",
+						"question-total",
+						"6644c2a6b7383abfc4752f5a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Return the user answer to each question he submitted, and the user-name and the title of each quesiton",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjQ0YzNiMzc4ODI4NDJkZGZiYzM5NGEiLCJpYXQiOjE3MTU4NzQwNjUsImV4cCI6MTcxNTk2MDQ2NX0.y277tiZK8DjuiU4nBx6hVvJHs55XbuetHXkniNftBtY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3006/api/statistics/user/66462bb18a9a70c029e275a4/answers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3006",
+					"path": [
+						"api",
+						"statistics",
+						"user",
+						"66462bb18a9a70c029e275a4",
+						"answers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Return all questions and for each question how many users choose  each of the question options, and the question title, and each option. Copy",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjQ0YzNiMzc4ODI4NDJkZGZiYzM5NGEiLCJpYXQiOjE3MTU4NzQwNjUsImV4cCI6MTcxNTk2MDQ2NX0.y277tiZK8DjuiU4nBx6hVvJHs55XbuetHXkniNftBtY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3006/api/statistics/questions/summary",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3006",
+					"path": [
+						"api",
+						"statistics",
+						"questions",
+						"summary"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "users",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjQ0NzNkODA2MzY0NzA3NTFiNWRjZGEiLCJpYXQiOjE3MTU3NjIxOTQsImV4cCI6MTcxNTg0ODU5NH0.tKZavfoPXbsSh1LrRWRXSuMxQQGHHIFvIiVeoB_amXw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3006/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3006",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "personal me",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjQ0NzNkODA2MzY0NzA3NTFiNWRjZGEiLCJpYXQiOjE3MTU3NjIxOTQsImV4cCI6MTcxNTg0ODU5NH0.tKZavfoPXbsSh1LrRWRXSuMxQQGHHIFvIiVeoB_amXw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3006/api/users/personal/me",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3006",
+					"path": [
+						"api",
+						"users",
+						"personal",
+						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user delete",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjQ0NzNkODA2MzY0NzA3NTFiNWRjZGEiLCJpYXQiOjE3MTU3NjIxOTQsImV4cCI6MTcxNTg0ODU5NH0.tKZavfoPXbsSh1LrRWRXSuMxQQGHHIFvIiVeoB_amXw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3006/api/users/delete/66446aafee823cb6d6443ebe",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3006",
+					"path": [
+						"api",
+						"users",
+						"delete",
+						"66446aafee823cb6d6443ebe"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create question",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjQ0NzNkODA2MzY0NzA3NTFiNWRjZGEiLCJpYXQiOjE3MTU3NjIxOTQsImV4cCI6MTcxNTg0ODU5NH0.tKZavfoPXbsSh1LrRWRXSuMxQQGHHIFvIiVeoB_amXw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Between the following, what do you most love to do?\",\r\n  \"firstAnswer\": \"Watch TV\",\r\n  \"secondAnswer\": \"Play the computer\",\r\n  \"thirdAnswer\": \"Hanging out with friends\",\r\n  \"fourthAnswer\": \"Travel the world\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3006/api/questions/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3006",
+					"path": [
+						"api",
+						"questions",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create poll",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjQ0NzNkODA2MzY0NzA3NTFiNWRjZGEiLCJpYXQiOjE3MTU3NjIxOTQsImV4cCI6MTcxNTg0ODU5NH0.tKZavfoPXbsSh1LrRWRXSuMxQQGHHIFvIiVeoB_amXw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"question\": \"6644c2a6b7383abfc4752f5a\",\r\n  \"selectedAnswer\": \"firstAnswer\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3006/api/polls/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3006",
+					"path": [
+						"api",
+						"polls",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjQ0NzNkODA2MzY0NzA3NTFiNWRjZGEiLCJpYXQiOjE3MTU3NjIxOTQsImV4cCI6MTcxNTg0ODU5NH0.tKZavfoPXbsSh1LrRWRXSuMxQQGHHIFvIiVeoB_amXw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"firstname\": \"John\",\r\n  \"lastname\": \"Doe\",\r\n  \"email\": \"test@gamil.com\",\r\n  \"password\": \"test123\",\r\n  \"birthday\": \"1990-01-01\",\r\n  \"address\": \"123 Main Street, Anytown, USA\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3006/api/users/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3006",
+					"path": [
+						"api",
+						"users",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update question",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjQ0NzNkODA2MzY0NzA3NTFiNWRjZGEiLCJpYXQiOjE3MTU3NjIxOTQsImV4cCI6MTcxNTg0ODU5NH0.tKZavfoPXbsSh1LrRWRXSuMxQQGHHIFvIiVeoB_amXw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Between the following, what do you most love to do?\",\r\n  \"firstAnswer\": \"Watch TVs\",\r\n  \"secondAnswer\": \"Play the computer\",\r\n  \"thirdAnswer\": \"Hanging out with friends\",\r\n  \"fourthAnswer\": \"Travel the world\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3006/api/questions/update/664474beaf395544b1a6c21f",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3006",
+					"path": [
+						"api",
+						"questions",
+						"update",
+						"664474beaf395544b1a6c21f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjQ0NzNkODA2MzY0NzA3NTFiNWRjZGEiLCJpYXQiOjE3MTU3NjIxOTQsImV4cCI6MTcxNTg0ODU5NH0.tKZavfoPXbsSh1LrRWRXSuMxQQGHHIFvIiVeoB_amXw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"firstname\": \"John\",\r\n  \"lastname\": \"Doe\",\r\n  \"email\": \"test@gamil.com\",\r\n  \"password\": \"test123\",\r\n  \"birthday\": \"1990-01-01\",\r\n  \"address\": \"123 Main Street, Anytown, USA\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3006/api/users/update/66448150e9f21d1d507f4e98",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3006",
+					"path": [
+						"api",
+						"users",
+						"update",
+						"66448150e9f21d1d507f4e98"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete question",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjQ0NzNkODA2MzY0NzA3NTFiNWRjZGEiLCJpYXQiOjE3MTU3NjIxOTQsImV4cCI6MTcxNTg0ODU5NH0.tKZavfoPXbsSh1LrRWRXSuMxQQGHHIFvIiVeoB_amXw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3006/api/questions/delete/664474beaf395544b1a6c21f",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3006",
+					"path": [
+						"api",
+						"questions",
+						"delete",
+						"664474beaf395544b1a6c21f"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

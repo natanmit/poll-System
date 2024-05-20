@@ -1,0 +1,42 @@
+{
+  "name": "poll-api",
+  "version": "1.0.0",
+  "description": "poll system backend api",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "mocha --exit --no-timeouts -r ./test.options.js */*.spec.js"
+  },
+  "keywords": [
+    "poll",
+    "system"
+  ],
+  "author": "Dor",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "bluebird": "^3.7.2",
+    "body-parser": "^1.20.2",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "joi": "^17.13.1",
+    "joi-objectid": "^4.0.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.6.2",
+    "mongoose": "^8.3.4",
+    "mongoose-sequence": "^6.0.1",
+    "nodemon": "^3.1.0",
+    "path": "^0.12.7",
+    "request-promise": "^4.2.6",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.0",
+    "uuid": "^9.0.1",
+    "winston": "^3.13.0"
+  },
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "mocha": "^10.4.0"
+  }
+}
